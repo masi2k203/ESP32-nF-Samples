@@ -1,20 +1,35 @@
 using System;
 using System.Diagnostics;
+using System.Device.Gpio;
 using System.Threading;
+using nanoFramework.Hardware.Esp32;
 
 namespace GpioControlSample
 {
     public class Program
     {
+        /// <summary>
+        /// GPIO18番ピン
+        /// </summary>
+        private static GpioPin _io18;
+
         public static void Main()
         {
-            Debug.WriteLine("Hello from nanoFramework!");
+            // GPIOコントローラの作成
+            var gpioController = new GpioController();
 
-            Thread.Sleep(Timeout.Infinite);
+            // GPIO18をアウトプットに設定する
+            _io18 = gpioController.OpenPin(Gpio.IO18);
 
-            // Browse our samples repository: https://github.com/nanoframework/samples
-            // Check our documentation online: https://docs.nanoframework.net/
-            // Join our lively Discord community: https://discord.gg/gCyBu8T
+            // アウトプットに設定する
+            _io18.SetPinMode(PinMode.Output);
+
+            // 1000msごとにトグルする
+            while (true)
+            {
+                _io18.Toggle();
+                Thread.Sleep(1000);
+            }
         }
     }
 }
