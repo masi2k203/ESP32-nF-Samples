@@ -44,7 +44,7 @@ namespace GPIOSample_ValueChangedEvent
 
         /// <summary>
         /// GPIO19でのValueChangedイベント処理
-        /// GPIO19の値が変化する旅にこのメソッドが実行される
+        /// GPIO19の値が変化するたびにこのメソッドが実行される
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
