@@ -42,6 +42,12 @@ namespace GPIOSample_ValueChangedEvent
             }
         }
 
+        /// <summary>
+        /// GPIO19でのValueChangedイベント処理
+        /// GPIO19の値が変化する旅にこのメソッドが実行される
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private static void GPIO19_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
             // イベントからGPIO19ピンの状態を確認
