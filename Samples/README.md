@@ -4,3 +4,8 @@
   - 基本的なGPIO操作のサンプル
 - GPIOSample-ValueChangedEvent
   - 入力ピンの値が変化したときに、特別な処理を行うサンプル
+
+## Device
+### I2C
+- I2CSample-AQM1602x
+  - [AE-AQM1602A](https://akizukidenshi.com/catalog/g/gK-08896/)をI2Cで操作するサンプル。
